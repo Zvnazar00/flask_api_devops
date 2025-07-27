@@ -1,0 +1,28 @@
+services:
+  flask_app:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - test-network
+    healthcheck:
+      test: ["CMD", "pwd"]
+      interval: 5s
+      retries: 2
+
+  test_runner:
+    build:
+      context: ./uat
+      dockerfile: Dockerfile
+    depends_on:
+      flask_app:
+        condition: service_healthy
+    networks:
+      - test-network
+    environment:
+      - FLASK_ENDPOINT=http://flask_app:5000
+
+networks:
+  test-network:
