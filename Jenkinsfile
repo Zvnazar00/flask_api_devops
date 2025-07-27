@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_BRANCH_NAME = 'new'
+        GIT_BRANCH_NAME = 'new_test'
         GIT_REPO_URL = 'https://github.com/Zvnazar00/flask_api_devops.git'
         RUNNER_CONTAINER = 'test_runner'
     }
