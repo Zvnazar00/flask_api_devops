@@ -12,9 +12,12 @@ pipeline {
         // 1. Checkout from SCM
         stage('SCM Checkout') {
             steps {
-                git branch: 'main', url: "${GIT_REPO_URL}"
+                git branch: 'main',
+                    url: 'https://github.com/Zvnazar00/flask_api_devops.git',
+                    credentialsId: 'GitHub-Creds'
             }
         }
+
 
         // 2. Run Docker Compose Tests
         stage('Docker Compose Build') {
