@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'docker-agent-1' }
+    agent any
 
     environment {
         GIT_BRANCH_NAME = 'new'
