@@ -17,7 +17,7 @@ def test_user_acceptance():
     # Test multiply operation
     response = requests.post(f"{base_url}/multiply", json={'num1': 4, 'num2': 5})
     assert response.status_code == 200
-    assert response.json()['result'] == 24
+    assert response.json()['result'] == 20
 
     print("All UAT scenarios passed successfully.")
 

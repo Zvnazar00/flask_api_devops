@@ -14,7 +14,6 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/Zvnazar00/flask_api_devops.git',
-                    credentialsId: '756c1b00-6caa-4e0f-98dc-8dd18d0b03dc'
             }
         }
 
