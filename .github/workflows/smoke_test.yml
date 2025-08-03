@@ -1,5 +1,5 @@
 # Workflow 3
-name: Check of Flask
+name: Check of football
 
 on:
     workflow_dispatch:
